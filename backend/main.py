@@ -8,7 +8,11 @@ from payout.routes import router as payout_router
 
 app = FastAPI()
 
-allowed_origins = [origin.strip() for origin in settings.CORS_ORIGINS.split(",") if origin.strip()]
+allowed_origins = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "https://playto-payment-engine.netlify.app",
+]
 app.add_middleware(
     CORSMiddleware,
     allow_origins=allowed_origins,
