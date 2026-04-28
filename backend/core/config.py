@@ -18,7 +18,12 @@ class Settings(BaseSettings):
 
     APP_ENV: str = "development"
     SECRET_KEY: str = "changeme"
-    CORS_ORIGINS: str = "http://localhost:5173,http://127.0.0.1:5173"
+    # Comma-separated list of allowed browser origins for the API (no trailing slash).
+    CORS_ORIGINS: str = (
+        "http://localhost:5173,"
+        "http://127.0.0.1:5173,"
+        "https://playto-payment-engine.netlify.app"
+    )
 
 
     IDEMPOTENCY_TTL_SECONDS: int = 86400
